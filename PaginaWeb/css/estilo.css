@@ -1,0 +1,464 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: sans-serif;
+}
+body{
+    background:	#ffd700;
+}
+/**EMVABEZADO*/
+header {  /*Encabezado*/
+    position:fixed;
+      /*Mantener el encabezado siempre arriba*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #ffffff; 
+    box-shadow: 0 4px 25px -22px black;
+    z-index: 2;
+    
+
+}
+.ancho {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link{
+    color:rgb(58, 51, 51);
+    text-decoration: none;
+}
+.logo{
+    height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 50px;
+    line-height: 80px;
+    
+}
+.nav-menu{
+    display:flex;
+    margin-right: 10px;
+    list-style: none;
+}
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+.nav-menu-link{
+    padding:8px 12px;
+    border-radius: 3px;
+}
+.nav-menu-link:hover{
+    background-color: #ff8c00;
+    transition: 0.5s;
+   
+}
+.nav-toggle{
+    color:white;
+    background:none;
+    border:none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    body{
+        background: rgb(255, 255, 255);
+        padding-top:10px;
+    }
+    header {  /*Encabezado*/
+        background-color: #ffd700;
+        height:60px;
+        position: fixed;
+        width: 100%;
+        margin:0;
+        top:0;
+        left: 0; 
+    }
+    .nav-link{
+        color:rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .nav-menu-link:hover{
+        background-color: #4d84b1;
+        transition: 0.5s;
+        padding-right: 20px;
+    }    
+    .logo{
+        height: 60px;
+        font-size: 50px;
+        font-weight: bold;
+        padding: 0 50px;
+        line-height: 80px;
+    }
+    .nav-menu{
+        flex-direction: column;  /*Poner el menu en columna*/
+        align-items: center;
+        margin-left: 30px;
+        background-color: #2f4c66;
+        position:fixed;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        padding:0;
+
+        overflow-y: auto;
+        left:100%;
+        transition: 0.3s;
+    }
+    .nav-menu-item{
+        font-size: 18px;
+        margin-right: 40px;
+        
+    }
+    .nav-menu-link{
+        padding:5px 12px;
+        border-radius: 3px;
+        margin-left: 40px;
+    }
+
+    .nav-toggle{
+        display: block;
+    }
+    .nav-menu_visible{
+        left:0;      
+    }
+}    
+/*PPORTADA*/
+.container-cover{
+    width:100%;
+    height: 500px;
+    position: relative;
+    margin-top: 80px;
+    background-image: url(../imagenes/portada.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.container-info-cover{
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+.container-info-cover h1{
+    font-size: 70px;
+    font-weight: 500px;
+    color:white;
+    margin-bottom: 20px;
+}
+.container-info-cover p{
+    color: white;
+    font-size: 25px;
+    font-weight: 300px;
+}
+@media (max-width: 800px) {
+    .container-cover{
+        width:100%;
+        height: 300px;
+        position: relative;
+        margin-top: 0;
+        background-image: url(/imagenes/portada.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    .container-info-cover{
+        max-width: 800px;
+        height: 300px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+    }
+    .container-info-cover h1{
+        font-size: 35px;
+        font-weight: 300px;
+        color:white;
+        margin-bottom: 20px;
+    }
+    .container-info-cover p{
+        color: white;
+        font-size: 18px;
+        font-weight: 300px;
+    }
+}
+/*Contenedot contenido del articulo*/
+.container-content{
+    width: 1200px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 1%;
+   
+
+}
+article{
+    width: 100%;
+    padding:20px;
+    padding-bottom: 40px;
+    box-shadow: -10px 0 20px -30px black;
+    background:#ffff;
+    position: relative;
+    overflow:hidden;
+    margin-top: 10px;
+}
+article:before{
+    content:'';
+    width: 100%;
+    height:8px;
+    position:absolute;
+    top: 0;
+    left:0; 
+    background:	#ff8c00;
+}
+article h2{
+    margin-top:20px;
+    margin-left: 40px;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.container-parrafo p{
+    margin-top: 10px;
+    margin-left: 4%;
+    object-fit: cover;
+    height:200px;
+    width:550px;
+    font-size: 14px;
+    color: #3c3c3c;
+    text-align: justify; 
+    
+    
+}
+
+#img1{
+    border-radius: 4%;
+    width: 38%;
+    height: 230px;
+    position: absolute;
+    top: 50px;
+    left: 680px;
+    margin: auto;
+    object-fit: cover;
+/*contenido de galerya*/    
+}
+ .subtitulo h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    
+}
+.contenedor-galery{
+   width: 100%;
+   margin: 2.5rem auto;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 15px; 
+   gap: 1rem;
+   padding-right: 40px;
+   
+    
+ }
+.card{
+    width:100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow:hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+
+}
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+.card img{
+    width: 100%;
+    height:210px;
+}
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+.card .contenido p{
+    line-height: 1.5;
+    color: #6a6a6a;
+}
+.card .contenido h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.card .contenido button{
+    text-decoration: none;
+    display:inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color:#2fb4cc;
+    border: 1px solid #2fb4cc;
+    border-radius:6px;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+.card .contenido button:hover{
+    background:#2fb4cc;
+    color: #fff;
+}
+ /*el contenido de footer*/
+ footer{
+    width: 100%;
+    background: #202020;
+    color: white;   
+
+}
+
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1{
+    max-width: 400px;
+}
+
+.colum1 h1{
+    font-size: 22px;
+}
+
+.colum1 p{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2{
+    max-width: 400px;
+
+}
+
+.colum2 h1{
+    font-size: 22px;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+    
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+.colum3{
+    max-width: 400px;
+}
+
+.colum3 h1{
+    font-size: 22px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+    
+}
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+   
+    
+}
+
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer{
+    width: 100%;  
+    background: #101010;
+}
+
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    padding: 20px;
+}
+
+.copyright{
+    color: #C7C7C7;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+
+@media screen and (max-width: 1100px){
+
+    .container-body{
+        flex-wrap: wrap;
+    }
+
+    .colum1{
+        max-width: 100%;
+    }
+
+    .colum2,
+    .colum3{
+        margin-top: 40px;
+    }
+}
+
+
+
